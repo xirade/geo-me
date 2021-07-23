@@ -14,6 +14,13 @@ const firebaseConfig = {
 //   init firebase
 firebase.initializeApp(firebaseConfig);
 
+// init google api
+const script = document.createElement("script");
+script.defer = true;
+script.async = true;
+script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.VUE_APP_GOOGLE_MAP_API_KEY}`;
+document.head.appendChild(script);
+
 // init servises
 const projectFirestore = firebase.firestore();
 const projectAuth = firebase.auth();
